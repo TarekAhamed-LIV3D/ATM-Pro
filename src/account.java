@@ -24,6 +24,7 @@ public class account {
 
     public int setPinNumber(int pinNumber) {
         this.pinNumber = pinNumber;
+        return pinNumber;
     }
 
     public double getCheckingBalance() {
@@ -95,11 +96,12 @@ public class account {
         System.out.println("Amount you want to Deposit to your Saving Account: ");
         double amount = input.nextDouble();
 
-        if((savingBalance - amount) >= 0){
-            calcSavingWithdraw(amount);
+        if((savingBalance + amount) >= 0){
+            calcSavingDeposit(amount);
             System.out.println("New Saving Account balance: " + moneyFormat.format(savingBalance));
         } else{
             System.out.println("Balance can't be Negative." + "\n");
         }
     }
+
 }
